@@ -209,63 +209,91 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Profile photo */}
+          {/* Right: Profile photo — circular with float */}
           <motion.div
             className="hero-visual"
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Gradient ring wrapper */}
-            <div style={{
-              padding: '3px',
-              borderRadius: '20px',
-              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-              boxShadow: '0 0 40px rgba(139,92,246,0.25), 0 0 80px rgba(59,130,246,0.12)',
-            }}>
+            {/* Floating wrapper */}
+            <motion.div
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem' }}
+            >
+              {/* Outer glow layer */}
               <div style={{
-                borderRadius: '18px',
-                overflow: 'hidden',
-                background: 'var(--bg-card)',
-                lineHeight: 0,
+                position: 'relative',
+                display: 'inline-block',
               }}>
-                <img
-                  src="/profile.jpg"
-                  alt="Devadharshini K. — Aspiring Data Scientist & AI Developer"
+                {/* Pulsing glow behind */}
+                <motion.div
+                  animate={{ scale: [1, 1.06, 1], opacity: [0.4, 0.65, 0.4] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
                   style={{
-                    width: '100%',
-                    maxWidth: '420px',
-                    height: 'auto',
-                    display: 'block',
-                    objectFit: 'cover',
+                    position: 'absolute',
+                    inset: '-8px',
+                    borderRadius: '50%',
+                    background: 'conic-gradient(from 0deg, #3b82f6, #8b5cf6, #3b82f6)',
+                    filter: 'blur(10px)',
+                    zIndex: 0,
                   }}
                 />
+                {/* Gradient ring border */}
+                <div style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  padding: '4px',
+                  borderRadius: '50%',
+                  background: 'conic-gradient(from 120deg, #3b82f6, #8b5cf6, #60a5fa, #8b5cf6, #3b82f6)',
+                }}>
+                  {/* Photo circle */}
+                  <div style={{
+                    width: '320px',
+                    height: '320px',
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    background: 'var(--bg-card)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <img
+                      src="/profile.jpg"
+                      alt="Devadharshini K. — Aspiring Data Scientist & AI Developer"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center top',
+                        display: 'block',
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            {/* Name tag below photo */}
-            <motion.div
-              style={{
-                marginTop: '1rem',
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-            >
+
+              {/* Badge below photo */}
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                padding: '0.45rem 1rem',
+                padding: '0.5rem 1.25rem',
                 background: 'rgba(59,130,246,0.08)',
-                border: '1px solid rgba(59,130,246,0.2)',
+                border: '1px solid rgba(59,130,246,0.22)',
                 borderRadius: '100px',
-                fontSize: '0.75rem',
+                fontSize: '0.78rem',
                 fontWeight: 600,
                 color: 'var(--accent-blue-light)',
+                backdropFilter: 'blur(8px)',
               }}>
-                <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#34d399', display: 'inline-block' }} />
+                <motion.span
+                  animate={{ opacity: [1, 0.4, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  style={{ width: 7, height: 7, borderRadius: '50%', background: '#34d399', display: 'inline-block', flexShrink: 0 }}
+                />
                 Open to Opportunities
               </div>
             </motion.div>

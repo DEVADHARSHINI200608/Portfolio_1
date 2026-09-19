@@ -1274,6 +1274,9 @@ a {
   .hero-grid {
     grid-template-columns: 1fr;
   }
+  .hero-visual {
+    order: -1; /* photo above text on mobile */
+  }
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
