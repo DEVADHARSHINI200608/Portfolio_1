@@ -4,11 +4,11 @@ import { Briefcase, CheckCircle2, BookOpen } from 'lucide-react';
 import { experience } from '../data/experience';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
 };
 
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } } };
 
 export default function Experience() {
   const ref = useRef(null);

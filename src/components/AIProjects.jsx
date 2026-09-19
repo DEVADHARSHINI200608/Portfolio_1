@@ -4,12 +4,12 @@ import { Cpu, Mic, Heart, AlertCircle } from 'lucide-react';
 import { aiProjects } from '../data/projects';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const stagger = {
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.05 } },
 };
 
 const projectIcons = {

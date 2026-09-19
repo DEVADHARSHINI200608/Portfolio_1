@@ -127,6 +127,7 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
+              style={{ whiteSpace: 'nowrap', fontSize: 'clamp(2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.02em' }}
             >
               Devadharshini <span className="gradient-text">K.</span>
             </motion.h1>
