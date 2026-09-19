@@ -1,0 +1,67 @@
+export const skillCategories = [
+  {
+    id: "programming",
+    label: "Programming",
+    icon: "Code2",
+    color: "blue",
+    skills: [
+      { name: "Python", status: "project" },
+      { name: "SQL", status: "project" },
+      { name: "Java", status: "learning" },
+    ],
+  },
+  {
+    id: "datascience",
+    label: "Data Science",
+    icon: "BarChart3",
+    color: "violet",
+    skills: [
+      { name: "Pandas", status: "project" },
+      { name: "NumPy", status: "project" },
+      { name: "Matplotlib", status: "project" },
+      { name: "Scikit-learn", status: "project" },
+      { name: "Exploratory Data Analysis", status: "project" },
+      { name: "Data Preprocessing", status: "project" },
+    ],
+  },
+  {
+    id: "ml",
+    label: "Machine Learning",
+    icon: "Brain",
+    color: "blue",
+    skills: [
+      { name: "Regression", status: "project" },
+      { name: "Classification", status: "project" },
+      { name: "Feature Engineering", status: "project" },
+      { name: "Model Evaluation", status: "project" },
+      { name: "Logistic Regression", status: "project" },
+      { name: "Precision / Recall / F1", status: "project" },
+      { name: "ROC-AUC", status: "project" },
+    ],
+  },
+  {
+    id: "webai",
+    label: "Web & AI Dev",
+    icon: "Cpu",
+    color: "violet",
+    skills: [
+      { name: "Flask", status: "project" },
+      { name: "Django", status: "project" },
+      { name: "Streamlit", status: "project" },
+      { name: "Node.js", status: "project" },
+      { name: "AI / LLM Application Dev", status: "project" },
+      { name: "Voice AI", status: "project" },
+    ],
+  },
+  {
+    id: "tools",
+    label: "Tools",
+    icon: "Wrench",
+    color: "blue",
+    skills: [
+      { name: "Git", status: "project" },
+      { name: "GitHub", status: "project" },
+      { name: "Jupyter Notebook", status: "project" },
+    ],
+  },
+];
